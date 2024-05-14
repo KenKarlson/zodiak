@@ -24,7 +24,7 @@ function getZoo(year) {
   return zoo;
 }
 function getColor(year, info) {
-  info = 0;
+  //info = 0;
   let color = '';
   let element = '';
   let numberOfYear = Number(year)%10;
@@ -43,17 +43,17 @@ function getColor(year, info) {
   if (info===0) {
     return color;
   }else {
-    return color +'' + element;
+    return element;
   }
 }
 
 
   button.addEventListener("click", (event) => {  
     event.preventDefault();
-    let year = +prompt("Enter Year");
+    let year = +prompt("Enter Year", '2024');
     //getZoo(year);
-    txt.innerHTML = getZoo(year);
-    txt.style.color = getColor(year);
+    txt.innerHTML = `Символ года: ${getZoo(year)}, стихия: ${getColor(year,1)}`;
+    txt.style.color = getColor(year,0);
   });
 }
 
